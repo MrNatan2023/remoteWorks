@@ -1,0 +1,46 @@
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            background-image: url("https://live.staticflickr.com/3847/15045551995_e12f0a5b13_b.jpg");
+            background-size: cover;
+            background-position: center top;
+            font-family: Arial, sans-serif;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transform: translateY(-210px);    
+        }
+
+        .search-bar {
+            width: 600px;
+            padding: 10px 40px 10px 20px;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+            background-color: #ffffff;
+            font-size: 16px;
+        }
+
+        .search-bar::placeholder {
+            color: #aaa;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #aaa;
+        }
