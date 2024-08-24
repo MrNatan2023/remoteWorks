@@ -1,46 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url("https://live.staticflickr.com/3847/15045551995_e12f0a5b13_b.jpg");
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
-            background-image: url("https://live.staticflickr.com/3847/15045551995_e12f0a5b13_b.jpg");
-            background-size: cover;
-            background-position: center top;
-            font-family: Arial, sans-serif;
-        }
+.search-container {
+    margin-top: -400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px; 
+    width: 100%;
+    max-width: 600px;
+}
 
-        .search-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            transform: translateY(-210px);    
-        }
+.button-container {
+   
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; 
+    width: 100%;
+    max-width: 800px; 
+}
 
-        .search-bar {
-            width: 600px;
-            padding: 10px 40px 10px 20px;
-            border: 2px solid #ccc;
-            border-radius: 25px;
-            outline: none;
-            background-color: #ffffff;
-            font-size: 16px;
-        }
+.search-bar {
+    width: 100%; 
+    padding: 10px 40px 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    background-color: #ffffff;
+    font-size: 16px;
+}
 
-        .search-bar::placeholder {
-            color: #aaa;
-        }
+.search-bar::placeholder {
+    color: #aaa;
+}
 
-        .search-icon {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-            color: #aaa;
-        }
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #aaa;
+}
+
+.buttons {
+    padding: 10px 30px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttons:hover {
+    background-color: #ddd;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px; 
+    max-height: 300px; 
+    overflow-y: auto; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.dropdown-content a {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .buttons {
+    background-color: #ddd;
+}
