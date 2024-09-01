@@ -1,56 +1,59 @@
+h1{
+  text-align: center;   
+}
+
 .new_job {
-    margin-left: 40px;
-    margin-top: 120px;
+    margin: 50px auto; 
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #fff; 
     display: flex;
     flex-direction: column;
-    position: relative;
 }
+a{
+    color: black;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.new_job h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 
 .new_job label {
     font-size: 18px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .new_job input,
-.new_job select {
-    width: 40%;
+.new_job select,
+.square-input {
+    width: 100%; 
     border: 1px solid #ccc;
     border-radius: 4px;
-    height: 33px;
+    height: 45px;
     font-size: 16px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px;
     box-sizing: border-box;
+    resize: none;
+    margin-bottom: 20px;
 }
 
-.new_job select {
-    height: 33px;
-    font-size: 16px;
+.square-input {
+    height: 150px; 
 }
+
 
 .description,
 .benefits {
-    margin-left: 40px;
-    margin-top: 35px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    position: relative;
-}
-
-.description label,
-.benefits label {
-    font-size: 18px;
-}
-
-.description input,
-.benefits input {
-    width: 40%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    height: 400px;
-    font-size: 16px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    box-sizing: border-box;
-    text-align: left;
-    padding: 10px;
-    resize: none;
 }

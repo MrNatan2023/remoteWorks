@@ -1,8 +1,15 @@
+.title{
+    color: white;
+ font-size: 36px;
+    margin-bottom: 300px; 
+    
+}
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh;
+
     background-color: #f0f0f0;
     background-image: url("https://live.staticflickr.com/3847/15045551995_e12f0a5b13_b.jpg");
     background-size: cover;
@@ -14,7 +21,7 @@ body {
 }
 
 .search-container {
-    margin-top: -400px;
+    margin-top: -241px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,7 +137,7 @@ body {
 .registration-button{
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 1420px;
 }
 
 .registration-button button{
@@ -138,6 +145,25 @@ body {
     height: 50px;  
     border-radius: 10px 20px ;
     background-color: #4CAF50; 
+    color: white;
+    font-size: 16px;
+    cursor: pointer; 
+    text-align: center; 
+    display: inline-block; 
+    line-height: 50px; 
+}
+
+.login-button{
+    position: absolute;
+    top: 20px;
+    right: 1220px;
+}
+
+.login-button button{
+    width: 150px;
+    height: 50px;  
+    border-radius: 10px 20px ;
+    background-color: #2457c7; 
     color: white;
     font-size: 16px;
     cursor: pointer; 
