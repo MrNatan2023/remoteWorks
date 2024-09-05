@@ -10,27 +10,34 @@
     <a href="index.html"><h1>RemoteWork</h1></a>
     <div class="new_job">
         <h2>Descrição Básica</h2>
-        <label for="name_company">Nome da Companhia:</label>
-        <input type="text" id="name_company" name="name_company">
-        <label for="type_of_employment">Tipo de Emprego:</label>
-        <select id="type_of_employment" name="type_of_employment">
-            <option value="fulltime">Tempo Integral</option>
-            <option value="internship">Estágio</option>
-            <option value="part-time">Meio-Período</option>
-            <option value="temporary">Temporária</option>
-        </select>
-        <label for="quafications">Qualificações:</label>
-        <select name="quafications" id="quafications">
-            <option value="software engineer">Software Engineer</option>
-            <option value="data scientist">Data Scientist</option>
-        </select>
-        <label for="description">Descrição:</label>
-        <textarea id="description" name="description" class="square-input" required></textarea>
-        <label for="benefits">Benefícios:</label>
-        <textarea id="benefits" name="benefits" class="square-input" required></textarea>
-    </div>
-    <div class="new_job_aditional">
-        
+        <form action="http://localhost:3000/cadastrar" method="post">
+            <label for="name_company">Nome da Companhia:</label>
+            <input type="text" id="name_company" name="name_company" required>
+            
+            <label for="type_of_employment">Tipo de Emprego:</label>
+            <select id="type_of_employment" name="type_of_employment" required>
+                <option value="fulltime">Tempo Integral</option>
+                <option value="internship">Estágio</option>
+                <option value="part-time">Meio-Período</option>
+                <option value="temporary">Temporária</option>
+            </select>
+            
+            <label for="qualifications">Qualificações:</label>
+            <select name="qualifications" id="qualifications" required>
+                <option value="software engineer">Software Engineer</option>
+                <option value="data scientist">Data Scientist</option>
+            </select>
+            
+            <label for="description">Descrição:</label>
+            <textarea id="description" name="description" class="square-input" required></textarea>
+            
+            <label for="benefits">Benefícios:</label>
+            <textarea id="benefits" name="benefits" class="square-input" required></textarea>
+            
+            <div class="remotejob-button">
+                <button id="submitButton" type="submit">Cadastrar vaga</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>

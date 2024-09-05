@@ -24,82 +24,13 @@
         <i class="fas fa-search search-icon"></i>
     </div>
     <div class="button-container">
-        <div class="dropdown">
-            <button class="buttons">Tipo de vaga</button>
-            <div class="dropdown-content">
-                <a href="#">Estágio</a>
-                <a href="#">Tempo Integral</a>
-                <a href="#">Meio-Periodo</a>
-                <a href="#">Temporária</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="buttons">Localização</button>
-            <div class="dropdown-content">
-                <a href="#">EUA</a>
-                <a href="#">México</a>
-                <a href="#">Canadá</a>
-                <a href="#">Equador</a>
-                <a href="#">Brasil</a>
-                <a href="#">Argentina</a>
-                <a href="#">Chile</a>
-                <a href="#">Colômbia</a>
-                <a href="#">Peru</a>
-                <a href="#">Venezuela</a>
-                <a href="#">Alemanha</a>
-                <a href="#">França</a>
-                <a href="#">Reino Unido</a>
-                <a href="#">Itália</a>
-                <a href="#">Espanha</a>
-                <a href="#">Portugal</a>
-                <a href="#">Países Baixos</a>
-                <a href="#">Suíça</a>
-                <a href="#">Suécia</a>
-                <a href="#">Noruega</a>
-                <a href="#">Dinamarca</a>
-                <a href="#">Austrália</a>
-                <a href="#">Japão</a>
-                <a href="#">China</a>
-                <a href="#">Índia</a>
-                <a href="#">Coreia do Sul</a>
-                <a href="#">Singapura</a>
-                <a href="#">Nova Zelândia</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="buttons">Salário</button>
-            <div class="dropdown-content">
-                <a href="#">Menos de 5000</a>
-                <a href="#">5000 - 8000</a>
-                <a href="#">8000 - 10000</a>
-                <a href="#">10000 - 20000</a>
-                <a href="#">20000 +</a>
-            </div>
-        </div>
-
-       <div class="dropdown">
-            <button class="buttons">Experiência</button>
-            <div class="dropdown-content">
-                <a href="#">1 ano</a>
-                <a href="#">2 anos</a>
-                <a href="#">3 anos</a>
-                <a href="#">4 anos</a>
-                <a href="#">5 anos +</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="buttons">Benefícios</button>
-            <div class="dropdown-content">
-                <a href="#">Vale-alimentação</a>
-                <a href="#">Vale-transporte</a>
-            </div>
-        </div>
+        <!-- Seus botões de filtro aqui -->
     </div>
 
     <div class="job-container">
-        <div class="job-card">
-            <p></p>
-        </div>
+       <form action="" method="get">
+        
+       </form>
     </div>
 
     <div class="pagination">
@@ -110,5 +41,38 @@
         <a href="#">4</a>
         <a href="">></a>
     </div>
+
+    <!-- Inclua o script JS aqui -->
+    <script>
+    async function fetchJobs() {
+        try {
+            const response = await fetch('http://localhost:3000/jobs'); // Faz a requisição para o servidor
+            const jobs = await response.json(); // Converte a resposta em JSON
+
+            const jobContainer = document.querySelector('.job-container'); // Seleciona o container de vagas
+            jobContainer.innerHTML = ''; // Limpa o conteúdo do container
+
+            jobs.forEach(job => {
+                const jobCard = document.createElement('div');
+                jobCard.classList.add('job-card');
+
+                jobCard.innerHTML = `
+                    <h3>${job.name_company}</h3>
+                    <p><strong>Tipo de Emprego:</strong> ${job.type_of_employment}</p>
+                    <p><strong>Qualificações:</strong> ${job.qualifications}</p>
+                    <p><strong>Descrição:</strong> ${job.description}</p>
+                    <p><strong>Benefícios:</strong> ${job.benefits}</p>
+                `;
+
+                jobContainer.appendChild(jobCard); // Adiciona o card ao container
+            });
+
+        } catch (error) {
+            console.error('Erro ao buscar vagas:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchJobs); // Chama a função fetchJobs ao carregar a página
+    </script>
 </body>
 </html>
