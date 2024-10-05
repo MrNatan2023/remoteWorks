@@ -14,15 +14,38 @@ mongoose.connect('mongodb://localhost:27017/remotework', { useNewUrlParser: true
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); 
 
+const userSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    password: String
+});
+
 const jobSchema = new mongoose.Schema({
     name_company: String,
     type_of_employment: String,
     qualifications: String,
     description: String,
-    benefits: String
+    benefits: String,
+    salary: String
 });
 
 const Job = mongoose.model('Job', jobSchema);
+const User = mongoose.model('User', userSchema);
+
+app.post('/register', async (req, res) => { 
+    try {
+        const newUser = new User({
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password
+        });
+
+        await newUser.save();
+    } catch (err) {
+        console.error('Error no Mongo', err);
+        res.status(500).json({ error: 'Error no Mongo', details: err });
+    }
+});
 
 app.post('/cadastrar', async (req, res) => {
     try {
@@ -31,17 +54,18 @@ app.post('/cadastrar', async (req, res) => {
             type_of_employment: req.body.type_of_employment,
             qualifications: req.body.qualifications,
             description: req.body.description,
-            benefits: req.body.benefits
+            benefits: req.body.benefits,
+            salary: req.body.salary
         });
 
         await newJob.save();
-        console.log('Dados cadastrados');
-        res.json({ message: 'Dados cadastrados' });
     } catch (err) {
         console.error('Error no Mongo', err);
         res.status(500).json({ error: 'Error no Mongo', details: err });
     }
 });
+
+
 
 app.get('/jobs', async (req, res) =>{
     try{
@@ -54,6 +78,9 @@ app.get('/jobs', async (req, res) =>{
 
 
 })
+
+
+
 
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);

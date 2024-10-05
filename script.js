@@ -21,6 +21,8 @@ async function fetchJobs() {
                 <p> ${job.description}</p>
                 <p><strong>Benefícios:</strong></p>
                 <p>${job.benefits}</p>
+                <p><strong>Sálarios:</strong></p>
+                <p>${job.salary}</p>
             `;
 
             jobContainer.appendChild(jobCard); 
