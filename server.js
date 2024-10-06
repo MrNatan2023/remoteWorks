@@ -57,7 +57,7 @@ app.post('/cadastrar', async (req, res) => {
             benefits: req.body.benefits,
             salary: req.body.salary
         });
-
+        
         await newJob.save();
     } catch (err) {
         console.error('Error no Mongo', err);
